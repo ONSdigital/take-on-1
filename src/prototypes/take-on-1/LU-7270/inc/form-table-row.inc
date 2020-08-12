@@ -27,6 +27,10 @@
       </td>
     {% endif %}
 
+    <td class="table__cell table__cell--numeric">
+    <p>test</p>
+    </td>
+
     <td class="table__cell ">
         {% if q.Status == "Edited" %}
             <span class='status status--info'>{{ q.Status }}</span>
