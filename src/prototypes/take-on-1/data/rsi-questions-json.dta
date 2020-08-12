@@ -35,6 +35,7 @@
    "Adjusted": "39,928",
    "Status": "Validations",
    "Action": "No",
+   "Severity": "Error",
    "ValidationMessages": ["This has changed since the last submission"]
  },
  {
@@ -157,11 +158,12 @@
  {
    "Number": "Q146",
    "Question": "Comment about reason for turnover changes",
-   "Response": "We ran some special promotions and easter events. As a result we saw an increase in online sales. However there was a rainy third weekend which depressed later sales.",
+   "Response": "COVID-19",
    "Adjusted": "",
    "Status": "Validations",
    "Action": "",
-   "ValidationMessages": ["Respondent entered a comment"]
+   "Severity": "Warning",
+   "ValidationMessages": ["Respondent entered a comment","Another Validation Message","Another Validation Message","Another Validation Message"]
  }
 ]
 

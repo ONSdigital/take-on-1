@@ -59,7 +59,6 @@ layout: take-on-1/views/_master
           <th scope="col" class="table__header ">Question</th>
           <th scope="col" class="table__header to-action-th table__header--numeric">Response</th>
           {% if showAdjustedCol %}<th scope="col" class="table__header table__header--numeric">Adjusted</th>{% endif %}
-          <th scope="col" class="table__header ">Severity</th>
           <th scope="col" class="table__header ">Question status</th>
           <th scope="col" class="table__header ">Action</th>
         </tr>
@@ -67,7 +66,7 @@ layout: take-on-1/views/_master
       <tbody class="table__body">
 
         {% for q in questions %}
-          {% include "prototypes/take-on-1/LU-7270/inc/form-table-row.inc" %}
+          {% include "prototypes/take-on-1/LU-7270/inc/form-table-row-concatanated-warnings.inc" %}
         {% endfor %}
 
       </tbody>
@@ -83,7 +82,6 @@ layout: take-on-1/views/_master
           <th scope="col" class="table__header ">Question</th>
           <th scope="col" class="table__header to-action-th table__header--numeric">Response</th>
           {% if showAdjustedCol %}<th scope="col" class="table__header table__header--numeric">Adjusted</th>{% endif %}
-          <th scope="col" class="table__header ">Severity</th>
           <th scope="col" class="table__header ">Question status</th>
           <th scope="col" class="table__header ">Action</th>
         </tr>
@@ -92,7 +90,7 @@ layout: take-on-1/views/_master
 
         {% for q in questions %}
           {% if q.Status!="" %}
-            {% include "prototypes/take-on-1/v3/inc/form-table-row.inc" %}
+            {% include "prototypes/take-on-1/LU-7270/inc/form-table-row-concatanated-warnings.inc" %}
           {% endif %}
         {% endfor %}
 
