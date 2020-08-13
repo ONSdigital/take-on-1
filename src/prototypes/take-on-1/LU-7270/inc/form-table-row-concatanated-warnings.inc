@@ -44,10 +44,10 @@
             
             <tbody>
                     
-            {% for v in q.ValidationMessages %}
+            {% for v in q.ValidationWarnings %}
             <tr>
                 <td>
-                    <span class='status status--error to-validation'>{{ q.Severity }} - {{ v }}</span>
+                    <span class='status status--error to-validation'>Warning - {{ v }}</span>
                 </td>
                 <td>
                 {% if q.Severity == "Warning" %}
@@ -56,6 +56,16 @@
                         <label id="label-{{output['validationoutputid']}}" class="checkbox__label to-u-bg " for="{{output['validationoutputid']}}">Override <span class="u-vh"> {{ output["validationmessage"] | lower }} </span></label>
                     </span>      
                 {% endif %}          
+                </td>
+
+            </tr>
+             {% endfor %}
+             {% for v in q.ValidationErrors %}
+            <tr>
+                <td>
+                    <span class='status status--error to-validation'>Error - {{ v }}</span>
+                </td>
+                <td>         
                 </td>
 
             </tr>

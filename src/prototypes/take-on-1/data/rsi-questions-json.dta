@@ -36,7 +36,7 @@
    "Status": "Validations",
    "Action": "No",
    "Severity": "Error",
-   "ValidationMessages": ["This has changed since the last submission"]
+   "ValidationErrors": ["This has changed since the last submission"]
  },
  {
    "Number": "Q23",
@@ -163,7 +163,8 @@
    "Status": "Validations",
    "Action": "",
    "Severity": "Warning",
-   "ValidationMessages": ["Respondent entered a comment","Another Validation Message","Another Validation Message","Another Validation Message"]
+   "ValidationWarnings": ["Respondent entered a comment","Another Validation Message"],
+   "ValidationErrors": ["Respondent entered a comment","Another Validation Message"]
  }
 ]
 
