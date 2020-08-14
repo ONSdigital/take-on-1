@@ -43,22 +43,12 @@ layout: take-on-1/views/_master
 {% from "prototypes/take-on-1/data/rsi-questions-json.dta" import questions %}
 {% set showAdjustedCol = true %}
 
-<section role="region" class="tabs">
-  <h2 class="tabs__title">Tabs</h2>
-  <ul class="tabs__list">
-    <li id="tabId1Item" class="tab__list-item"><a href="#tabId1" class="tab" data=ga="click" data-ga-category="tabs" data-ga-action="Show: All data" data-ga-label="Show: All data">All data</a></li>
-    <li id="tabId2Item" class="tab__list-item"><a href="#tabId2" class="tab" data=ga="click" data-ga-category="tabs" data-ga-action="Show: Validations" data-ga-label="Show: Validations">Validations</a></li>
-  </ul>
-
-  <section id="tabId1" class="tabs__panel">
-    <h3>All data</h3>
     <table id="basic-table" class="table ">
       <thead class="table__head">
         <tr class="table__row">
           <th scope="col" class="table__header ">Number</th>
           <th scope="col" class="table__header ">Question</th>
           <th scope="col" class="table__header to-action-th table__header--numeric">Response</th>
-          {% if showAdjustedCol %}<th scope="col" class="table__header table__header--numeric">Adjusted</th>{% endif %}
           <th scope="col" class="table__header ">Question status</th>
           <th scope="col" class="table__header ">Action</th>
         </tr>
@@ -71,36 +61,31 @@ layout: take-on-1/views/_master
 
       </tbody>
     </table>
-  </section>
 
-  <section id="tabId2" class="tabs__panel">
-    <h3>Validations</h3>
-    <table id="basic-table" class="table ">
-      <thead class="table__head">
-        <tr class="table__row">
-          <th scope="col" class="table__header ">Number</th>
-          <th scope="col" class="table__header ">Question</th>
-          <th scope="col" class="table__header to-action-th table__header--numeric">Response</th>
-          {% if showAdjustedCol %}<th scope="col" class="table__header table__header--numeric">Adjusted</th>{% endif %}
-          <th scope="col" class="table__header ">Question status</th>
-          <th scope="col" class="table__header ">Action</th>
-        </tr>
-      </thead>
-      <tbody class="table__body">
+    <hr>
+      <fieldset class="fieldset">
+          <legend class="fieldset__legend u-vh">Override all</legend>
+          <p class="checkboxes__label"></p>
+          <span class="checkboxes__items">
+              <p class="checkboxes__item">
+                  <span class="checkbox input--w-10">
+                      <input type="checkbox" id="select-all" class="checkbox__input js-checkbox " value="Select All" name="select-all-checkbox" onclick="select_all(this)">
+                      <label id="label-select-all" class="checkbox__label " for="select-all">Override all</label>
+                  </span>
+              </p>
+          </span>
+      </fieldset>
 
-        {% for q in questions %}
-          {% if q.Status!="" %}
-            {% include "prototypes/take-on-1/LU-7270/inc/form-table-row-concatanated-warnings.inc" %}
-          {% endif %}
-        {% endfor %}
+    <br>
+    <br>
 
-      </tbody>
-    </table>
-  </section>
+    <button class="btn btn--small" type="submit" id="saveFormButton" value="save-and-validate" name="action">
+        <span class="btn__inner">Save and validate</span>
+    </button>
 
-</section>
-
-
+    <button class="btn btn--small" type="submit" value='override' name='action' id='override_button'>
+        <span class="btn__inner">Override</span>
+    </button>
 
 
 {% endblock %}

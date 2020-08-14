@@ -23,19 +23,25 @@
         <!-- {% endif %} -->
     </td>
 
-    {% if showAdjustedCol %}
-      <td class="table__cell table__cell--numeric">
-          {{ q.Adjusted }}
-      </td>
-    {% endif %}
-
-    <!-- <td class="table__cell ">
-        {{ q.Severity }}
-    </td> -->
-
     <td class="table__cell ">
         {% if q.Status == "Edited" %}
-            <span class='status status--info'>{{ q.Status }}</span>
+            <!-- <span class='status status--info'>{{ q.Status }}</span> -->
+
+            <table>
+                <tbody>
+                    <tr>
+                        <td>
+                            <span class='status status--info'>This has changed since the last submission</span>
+                        </td>
+                        <td>
+                            <span class="checkbox js-password-toggle-wrap checkbox--toggle u-mt-no u-mb-s">
+                                <input type="checkbox" id="{{output['validationoutputid']}}" class="checkbox__input js-checkbox js-password-toggle to-u-bg-w " name="override-checkbox">
+                                <label id="label-{{output['validationoutputid']}}" class="checkbox__label to-u-bg " for="{{output['validationoutputid']}}">Override <span class="u-vh">  </span></label>
+                            </span>      
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         {% endif %}
 
         {% if q.Status == "Validations" %}
